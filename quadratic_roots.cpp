@@ -19,9 +19,9 @@ int main (void)
     printf("Quadratic equation calculation for real roots.\n");
 
     /* variable inputs defined */
-    printf("Enter a constant > 0 for varible a > ");
+    printf("Enter a constant for variable a > ");
     scanf("%lf", &a); /* a is > 0, but not = 0 */
-    printf("Enter a constant for varible b > ");
+    printf("Enter a constant for variable b > ");
     scanf("%lf", &b);
     printf("Enter a constant for variable c > ");
     scanf("%lf", &c);
@@ -42,8 +42,8 @@ int main (void)
 /*
 Run 1 output:
 Quadratic equation calculation for real roots.
-Enter a constant > 0 for varible a > 1
-Enter a constant for varible b > -3
+Enter a constant for variable a > 1
+Enter a constant for variable b > -3
 Enter a constant for variable c > -10
 if a = 1.000000, b = -3.000000, c = -10.000000
 the real roots are
@@ -54,8 +54,8 @@ Press any key to continue . . .
 /*
 Run 2 output:
 Quadratic equation calculation for real roots.
-Enter a constant > 0 for varible a > 1
-Enter a constant for varible b > -5
+Enter a constant for variable a > 1
+Enter a constant for variable b > -5
 Enter a constant for variable c > 6.25 
 if a = 1.000000, b = -5.000000, c = 6.250000
 the real roots are
@@ -66,8 +66,8 @@ Press any key to continue . . .
 /*
 Run 3 output:
 Quadratic equation calculation for real roots.
-Enter a constant > 0 for varible a > 3
-Enter a constant for varible b > 1
+Enter a constant for variable a > 3
+Enter a constant for variable b > 1
 Enter a constant for variable c > -4
 if a = 3.000000, b = 1.000000, c = -4.000000
 the real roots are
