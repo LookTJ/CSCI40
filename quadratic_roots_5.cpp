@@ -13,7 +13,7 @@ quadratic equation: ax^2+bx+c=0
 
 int main (void)
 {
-    double a, b, c, x1, x2, d;
+    double a, b, c, x1, x2, d, real, imag;
 
     /* variable inputs defined */
     printf("Enter a constant for variable a > ");
@@ -42,17 +42,17 @@ int main (void)
         printf("\n\nQuadratic equation calculation for complex roots.\n");
         x1 = -b/(2*a);
         x2 = sqrt(fabs(d))/(2*a);
-        if(x2 == 1) /* to make the output "cleaner" */
+        if(imag == 1) /* to make the output "cleaner" */
         {
             printf("if a = %f, b = %f, c = %f\n", a, b, c);
             printf("The complex roots are\n"
-                    "%.2f + i and %.2f - i \n", x1, x1);
+                    "%.2f + i and %.2f - i \n", real, real);
         }
         else
         {
             printf("if a = %f, b = %f, c = %f\n", a, b, c);
             printf("The complex roots are\n"
-                    "%.2f + %.2fi and %.2f - %.2fi \n", x1, x2, x1, x2);
+                    "%.2f + %.2fi and %.2f - %.2fi \n", real, imag, real, imag);
         }
     }
 

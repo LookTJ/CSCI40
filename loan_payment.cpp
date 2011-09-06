@@ -1,6 +1,6 @@
 /*
 Submitter: Taylor Lookabaugh
-Program: #1
+Program: #4
 Purpose: To calculate the monthly payment
 on a loan
 */
