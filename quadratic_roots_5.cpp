@@ -40,8 +40,8 @@ int main (void)
     else
     {
         printf("\n\nQuadratic equation calculation for complex roots.\n");
-        x1 = -b/(2*a);
-        x2 = sqrt(fabs(d))/(2*a);
+        real = -b/(2*a);
+        imag = sqrt(fabs(d))/(2*a);
         if(imag == 1) /* to make the output "cleaner" */
         {
             printf("if a = %f, b = %f, c = %f\n", a, b, c);
