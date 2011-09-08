@@ -12,21 +12,58 @@ restriction: x > 0
 int main (void)
 {
     double result, x;
+    int k;
 
     printf("Natural log finder\n\n");
     printf("Enter a value greater than 0 > ");
     scanf("%lf", &x);
 
-    while(x<=0)
+    if(x<=0)
+        k=1;
+
+    switch(k)
     {
-        printf("Invalid value, please enter another value >");
-        scanf("%lf", &x);
+        case 1:
+            if(x<=0)
+            {
+                printf("Incorrect input.\n Please enter a positive number > ");
+                scanf("%lf", &x);
+            }
+        case 2:
+            if(x<=0)
+            {
+                printf("WARNING: invalid input! Please try again > ");
+                scanf("%lf", &x);
+            }
+            else
+            {
+                result = log(x);
+                printf("The ln of %5.4f is: %5.4f\n", x,result);
+                break;
+            }
+        case 3:
+            if(x<=0)
+            {
+                printf("Incorrect input. User failed attempts three times.\n"
+                        "Program aborted\n");
+                break;
+            }
+            else
+            {
+                result = log(x);
+                printf("The ln of %5.4f is: %5.4f\n", x, result);
+                break;
+            }
+        default:
+            if(x>0)
+            {
+                result = log(x);
+                printf("The ln of %5.4f is: %5.4f\n", x,result);
+                break;
+            }
     }
-    if (x>0)
-    {
-        result = log(x);
-        printf("The ln of %5.4f is: %5.4f\n", x,result);
-    }
+
+
     system("PAUSE");
     return(0);
 }
