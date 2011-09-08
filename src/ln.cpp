@@ -13,14 +13,16 @@ int main (void)
 {
     double result, x;
 
+    printf("Natural log finder\n\n");
     printf("Enter a value greater than 0 > ");
     scanf("%lf", &x);
 
-    if(x<=0)
+    while(x<=0)
     {
-        printf("invalid value\n");
+        printf("Invalid value, please enter another value >");
+        scanf("%lf", &x);
     }
-    else
+    if (x>0)
     {
         result = log(x);
         printf("The ln of x is: %5.4f\n", result);
