@@ -11,27 +11,19 @@ restriction: x > 0
 
 int main (void)
 {
-    double answer;
-    int x;
+    double result, x;
 
     printf("Enter a value greater than 0 > ");
-    scanf("%i", x);
+    scanf("%lf", &x);
 
-    switch(x)
+    if(x<=0)
     {
-        case 0:
-            printf("please try again.\n");
-            break;
-        default:
-            printf("please try again.\n");
-            break;
+        printf("invalid value\n");
     }
-    if (x<=0)
-        printf("invalid value");
     else
     {
-        answer = log(x);
-        printf("The ln of x is: %5f\n", answer);
+        result = log(x);
+        printf("The ln of x is: %5.4f\n", result);
     }
     system("PAUSE");
     return(0);
