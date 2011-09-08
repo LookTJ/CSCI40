@@ -1,5 +1,6 @@
 /*
 Submitter: Taylor Lookabaugh
+file: ln.cpp
 Purpose natural log finder
 equation: log(x)
 restriction: x > 0
@@ -56,3 +57,41 @@ int main (void)
     return(0);
 }
 
+/*
+run case a output:
+Natural log finder
+
+Enter a value greater than 0 > 2
+The natural log of 2.0000 is: 0.6931
+Press any key to continue . . .
+
+run case b output:
+Natural log finder
+
+Enter a value greater than 0 > -1
+Incorrect input.
+Please enter a positive number > 4
+The natural log of 4.0000 is: 1.3863
+Press any key to continue . . .
+
+run case c output:
+Natural log finder
+
+Enter a value greater than 0 > -1
+Incorrect input.
+Please enter a positive number > 0
+WARNING: invalid input! Please try again > 1
+The natural log of 1.0000 is: 0.0000
+Press any key to continue . . .
+
+run case d output:
+Natural log finder
+
+Enter a value greater than 0 > -4
+Incorrect input.
+Please enter a positive number > 0
+WARNING: invalid input! Please try again > -2
+Incorrect input. User failed attempts three times.
+Program aborted
+Press any key to continue . . .
+*/
