@@ -25,7 +25,7 @@ int main (void)
     if (x>0)
     {
         result = log(x);
-        printf("The ln of x is: %5.4f\n", result);
+        printf("The ln of %5.4f is: %5.4f\n", x,result);
     }
     system("PAUSE");
     return(0);
