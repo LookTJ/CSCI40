@@ -25,8 +25,10 @@ int main (void)
     {
         case 1:
             if(x<=0)
+            {
             printf("Incorrect input.\nPlease enter a positive number > ");
             scanf("%lf", &x);
+            }
         case 2:
             if(x<=0)
             {
