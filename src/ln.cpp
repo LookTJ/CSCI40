@@ -24,22 +24,13 @@ int main (void)
     switch(k)
     {
         case 1:
-            if(x<=0)
-            {
-                printf("Incorrect input.\n Please enter a positive number > ");
-                scanf("%lf", &x);
-            }
+            printf("Incorrect input.\nPlease enter a positive number > ");
+            scanf("%lf", &x);
         case 2:
             if(x<=0)
             {
                 printf("WARNING: invalid input! Please try again > ");
                 scanf("%lf", &x);
-            }
-            else
-            {
-                result = log(x);
-                printf("The ln of %5.4f is: %5.4f\n", x,result);
-                break;
             }
         case 3:
             if(x<=0)
@@ -48,17 +39,11 @@ int main (void)
                         "Program aborted\n");
                 break;
             }
-            else
-            {
-                result = log(x);
-                printf("The ln of %5.4f is: %5.4f\n", x, result);
-                break;
-            }
         default:
             if(x>0)
             {
                 result = log(x);
-                printf("The ln of %5.4f is: %5.4f\n", x,result);
+                printf("The natural log of %5.4f is: %5.4f\n", x,result);
                 break;
             }
     }
