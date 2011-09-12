@@ -1,6 +1,7 @@
 /*
 Submitter: Taylor Lookabaugh
-file: ln.cpp
+file: ln.c
+Program: #6
 Purpose natural log finder
 equation: log(x)
 restriction: x > 0
