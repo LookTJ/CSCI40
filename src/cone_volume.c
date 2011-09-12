@@ -1,4 +1,4 @@
-/* file: cone_volume.cpp                    */
+/* file: cone_volume.c                      */
 /* Program #2                               */
 /* This program calculates                  */
 /* the volume of a right circular cone.     */

@@ -1,6 +1,6 @@
 /*
 Submitter: Taylor Lookabaugh
-file: quadratic_roots_5.cpp
+file: quadratic_roots_5.c
 Program #5
 This program is designed to find the real
 and complex roots of a quadratic equation.

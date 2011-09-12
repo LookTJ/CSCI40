@@ -1,4 +1,4 @@
-/* file: cyl_s_area.cpp     */
+/* file: cyl_s_area.c       */
 /* Example Program #1       */
 /* This program calculates the surface area
     of a closed cylinder of radius r and height h. */

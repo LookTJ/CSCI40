@@ -1,6 +1,6 @@
 /*
 Submitter: Taylor Lookabaugh
-file: quadratic_roots.cpp
+file: quadratic_roots.c
 Program #3
 This program is designed to find the real
 roots of a quadratic equation.
