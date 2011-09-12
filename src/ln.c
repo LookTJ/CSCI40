@@ -3,7 +3,7 @@ Submitter: Taylor Lookabaugh
 file: ln.c
 Program: #6
 Purpose natural log finder
-equation: log(x)
+equation: y = log(x)
 restriction: x > 0
 */
 
@@ -13,7 +13,7 @@ restriction: x > 0
 
 int main (void)
 {
-    double result, x;
+    double y, x;
     int k;
 
     printf("Natural log finder\n\n");
@@ -47,8 +47,8 @@ int main (void)
         default:
             if(x>0)
             {
-                result = log(x);
-                printf("The natural log of %5.4f is: %5.4f\n", x,result);
+                y = log(x);
+                printf("The natural log of %5.4f is: %5.4f\n", x,y);
                 break;
             }
     }
