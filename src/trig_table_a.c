@@ -14,13 +14,15 @@ apply: use while loop.
 int main (void)
 {
     int angle_degrees=0;
-    double angle_radians, x;
+    double angle_radians_sin, angle_radians_cos;
 
     printf("Table of Trig functions \n");
+    printf("%6 deg. %9.4 sin %9.4 cos");
     while (angle_degrees <= 360)
     {
-        angle_radians = sin(angle_degrees*M_PI/180);
-        printf("%6i %9.6f \n", angle_degrees, angle_radians);
+        angle_radians_sin = sin(angle_degrees*M_PI/180);
+        angle_radians_cos = cos(angle_degrees*M_PI/180);
+        printf("%6i %9.4f %9.4f \n", angle_degrees, angle_radians_sin, angle_radians_cos);
         angle_degrees += 15;
     }
 
