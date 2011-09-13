@@ -16,13 +16,13 @@ int main (void)
     int angle_degrees=0;
     double angle_radians_sin, angle_radians_cos;
 
-    printf("Table of Trig functions \n");
-    printf("\t deg. \t sin \t cos \n");
+    printf("\t Table of Trig values \n");
+    printf("    angle(deg.)    sin            cos \n");
     while (angle_degrees <= 360)
     {
         angle_radians_sin = sin(angle_degrees*M_PI/180);
         angle_radians_cos = cos(angle_degrees*M_PI/180);
-        printf("%6i %9.4f %9.4f \n", angle_degrees, angle_radians_sin, angle_radians_cos);
+        printf("%6i %18.4f %14.4f \n", angle_degrees, angle_radians_sin, angle_radians_cos);
         angle_degrees += 15;
     }
 
