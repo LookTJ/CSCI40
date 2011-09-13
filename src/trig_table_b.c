@@ -4,7 +4,7 @@ file: trig_table_a.c
 program #7
 purpose: to print trig table with answers to every 15 degrees
         from 0-360 degrees in sine and cosine.
-apply: use while loop.
+apply: use for loop.
 */
 
 #include <stdio.h>
