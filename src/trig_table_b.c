@@ -14,7 +14,7 @@ apply: use while loop.
 int main (void)
 {
     int angle_degrees=0;
-    double angle_radians_sin, angle_radians_cos;
+    double angle_radians_sin, angle_radians_cos, angle_radians_tan;
 
     printf("\t Table of Trig values \n");
     printf("  angle(deg.)      sin            cos \n");
@@ -22,7 +22,8 @@ int main (void)
     {
         angle_radians_sin = sin(angle_degrees*M_PI/180);
         angle_radians_cos = cos(angle_degrees*M_PI/180);
-        printf("%6i %18.4f %14.4f \n", angle_degrees, angle_radians_sin, angle_radians_cos);
+        angle_radians_tan = tan(angle_degrees*M_PI/180);
+        printf("%6i %18.4f %14.4f %14.4f \n", angle_degrees, angle_radians_sin, angle_radians_cos, angle_radians_tan);
     }
 
     system("PAUSE");
