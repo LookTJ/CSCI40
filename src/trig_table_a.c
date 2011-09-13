@@ -17,7 +17,7 @@ int main (void)
     double angle_radians_sin, angle_radians_cos;
 
     printf("Table of Trig functions \n");
-    printf("%6 deg. %9.4 sin %9.4 cos");
+    printf("deg. sin cos");
     while (angle_degrees <= 360)
     {
         angle_radians_sin = sin(angle_degrees*M_PI/180);
