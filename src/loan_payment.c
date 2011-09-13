@@ -5,9 +5,9 @@ Purpose: To calculate the monthly payment
 on a loan
 */
 
-#include <cstdio>
-#include <cstdlib>
-#include <cmath>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 int main (void)
 {
@@ -29,7 +29,7 @@ int main (void)
     printf("Annual interest rate: %.4f\n", annual_rate);
     printf("Duration of the loan: %i months\n", n);
     printf("Amount: %.2f dollars\n", LA);
-    printf("The monthly loan payment with the above variables is: %.2f\n", MP);
+    printf("The monthly loan payment with the above variables is: $%.2f\n", MP);
 
     system("PAUSE");
     return(0);
