@@ -23,7 +23,7 @@ int main (void)
         angle_radians_sin = sin(angle_degrees*M_PI/180);
         angle_radians_cos = cos(angle_degrees*M_PI/180);
         angle_radians_tan = tan(angle_radians_sin/angle_radians_cos);
-        if(angle_degrees % 180 != 90)
+        if(angle_degrees % 180 != 90) /* test whether angle truly is 90 degrees or not */
             printf("%6i %18.4f %14.4f %14.4f \n", 
                     angle_degrees, angle_radians_sin, angle_radians_cos, angle_radians_tan);
         else
