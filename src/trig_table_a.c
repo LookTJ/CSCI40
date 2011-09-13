@@ -19,7 +19,7 @@ int main (void)
     printf("Table of Trig functions \n");
     while (angle_degrees <= 360)
     {
-        angle_radians = sin(x);
+        angle_radians = sin(angle_degrees*M_PI/180);
         printf("%6i %9.6f \n", angle_degrees, angle_radians);
         angle_degrees += 15;
     }
