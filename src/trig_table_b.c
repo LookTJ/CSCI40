@@ -3,7 +3,7 @@ Submitter: Taylor Lookabaugh
 file: trig_table_a.c
 program #7
 purpose: to print trig table with answers to every 15 degrees
-        from 0-360 degrees in sine and cosine.
+        from 0-360 degrees in sine, cosine, and tangent.
 apply: use for loop.
 */
 
