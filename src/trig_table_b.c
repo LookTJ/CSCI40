@@ -13,7 +13,7 @@ apply: use for loop.
 
 int main (void)
 {
-    int angle_degrees=0;
+    int angle_degrees;
     double angle_radians_sin, angle_radians_cos, angle_radians_tan;
 
     printf("\t\t Table of Trig Functions \n");
