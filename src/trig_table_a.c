@@ -16,7 +16,7 @@ int main (void)
     int angle_degrees=0;
     double angle_radians_sin, angle_radians_cos;
 
-    printf("\t Table of Trig values \n");
+    printf("\t Table of Trig Functions \n");
     printf(" Angle (deg.)      sin            cos \n");
     while (angle_degrees <= 360)
     {
@@ -29,3 +29,8 @@ int main (void)
     system("PAUSE");
     return(0);
 }
+
+/*
+Run output:
+
+*/
