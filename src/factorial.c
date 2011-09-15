@@ -1,7 +1,7 @@
 /*
 Submitter: Taylor Lookabaugh
 file: factorial.c
-program #4
+program #9
 purpose: to calculate factorial
 apply: using while loop
 */
