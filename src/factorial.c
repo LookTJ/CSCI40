@@ -32,7 +32,9 @@ int main (void)
         f *= x;
         x--;
     }
+
     printf("integer = %i; factorial = %i \n", i, f);
 
+    system("PAUSE");
     return(0);
 }
