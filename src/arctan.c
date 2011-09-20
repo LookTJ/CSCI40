@@ -30,7 +30,7 @@ int main (void)
     for(k=1; k<=20; k+=2)
     {
 
-        result = (pow(x,k)/k)*-1;
+        result = (pow(arctan,k)/k)*-1;
         sum += result;
         
     }
