@@ -12,7 +12,7 @@ apply: using for loop, restrict x input
 int main (void)
 {
     double x, arctan, sum=0.0, result;
-    int k;
+    int k, n=3;
 
     do
     {
@@ -25,12 +25,10 @@ int main (void)
     while (x < -1 || x > 1);
 
     arctan = atan(x);
-    sum += arctan;
     
     for(k=1; k<=20; k+=2)
     {
-
-        result = (pow(arctan,k)/k)*-1;
+        result = (pow(x,k)/k)*-1;
         sum += result;
         
     }
