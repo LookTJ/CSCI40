@@ -24,15 +24,16 @@ int main (void)
     }
     while (x < -1 || x > 1);
 
+    arctan = atan(x);
+    sum += arctan;
     
-    for(k=0; k<=20; k+=2)
+    for(k=1; k<=20; k+=2)
     {
 
-        result = x - (pow(x,3))/3 + (pow(x,5))/5 - (pow(x,7))/7 + (pow(x,9))/9;
+        result = (pow(x,k)/k)*-1;
         sum += result;
         
     }
-    arctan = atan(sum);
 
     printf("the first twenty terms of arctan: %.4f\n", sum);
 
