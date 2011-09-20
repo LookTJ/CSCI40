@@ -11,8 +11,7 @@ apply: using for loop, restrict x input
 
 int main (void)
 {
-    double x, arctan, sum=0.0, result;
-    int k, n=3;
+    double x, arctan;
 
     do
     {
@@ -26,14 +25,14 @@ int main (void)
 
     arctan = atan(x);
     
-    for(k=1; k<=20; k+=2)
+    double result=0.0;
+    for(int k=1; k<=39; k+=2)
     {
-        result = (pow(x,k)/k)*-1;
-        sum += result;
-        
+        result += (((k + 1) % 4 == 0) ? -1 : 1) * pow(x, k) / k;
     }
 
-    printf("the first twenty terms of arctan: %.4f\n", sum);
+    printf("the sum of arctan(%.1f) = %.4f\n"
+            "(check)arctan(%.1f) = %.4f\n", x, result, x, arctan);
 
 
     system("PAUSE");
