@@ -13,7 +13,7 @@ Apply: while loop
             int main(void)
             {
                 int k, day, max_day, min_day, num=0;
-                double l_temp, h_temp, sum_l=0.0, sum_h=0.0, max=0.0, min=999999.0;
+                double l_temp, h_temp, sum_l=0.0, sum_h=0.0, max=-999999.0, min=999999.0;
                 FILE *myfile;
 
                 myfile=fopen("weather.txt", "r");
@@ -42,8 +42,10 @@ Apply: while loop
                         num++;
                     }
 
-                    printf("The maximum temp: %.1f occured on day %i\n\n", max, max_day);
-                    printf("The mimimum temp: %.1f  occured on day %i\n\n", min, min_day);
+                    printf("The maximum temp: %.1f occured on day %i\n\n", 
+                            max, max_day);
+                    printf("The mimimum temp: %.1f  occured on day %i\n\n", 
+                            min, min_day);
                     printf("The average low temp was %.1f\n\n", sum_l/num);
                     printf("The average high temp was %.1f\n\n", sum_h/num);
                 }
