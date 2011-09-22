@@ -1,5 +1,6 @@
 /*
 Submitter: Taylor Lookabaugh
+file: arctan.c
 Program #10
 Purpose: first twenty terms of arctan(x)
 apply: using for loop, restrict x input
@@ -11,7 +12,8 @@ apply: using for loop, restrict x input
 
 int main (void)
 {
-    double x, arctan;
+    double x, arctan, result=0.0;
+    int k;
 
     do
     {
@@ -25,14 +27,13 @@ int main (void)
 
     arctan = atan(x);
     
-    double result=0.0;
-    for(int k=1; k<=39; k+=2)
+    for(k=1; k<=39; k+=2)
     {
         result += (((k + 1) % 4 == 0) ? -1 : 1) * pow(x, k) / k;
     }
 
-    printf("the sum of arctan(%.1f) = %.4f\n"
-            "(check)arctan(%.1f) = %.4f\n", x, result, x, arctan);
+    printf("(series)arctan(%.4f) = %.4f\n"
+            "(check atan)arctan(%.4f) = %.4f\n", x, result, x, arctan);
 
 
     system("PAUSE");
