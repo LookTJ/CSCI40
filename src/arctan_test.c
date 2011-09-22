@@ -11,7 +11,7 @@ apply: using for loop, restrict x input
 
 int main (void)
 {
-    double x, arctan, resume=0.0;
+    double x, arctan, result=0.0;
     int k,
 
     do
