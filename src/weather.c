@@ -1,15 +1,19 @@
-
-
-   /* file: weather.cpp */
-   /* This is a program to demonstrate reading from a file*/
+/*
+Submitter: Taylor Lookabaugh
+Program: #11
+file: weather.cpp
+Purpose: This is a program to demonstrate reading from a file
+Feature added: print max/min tempurature and respected day
+Apply: while loop
+ */
 
             #include <stdio.h>
             #include <stdlib.h>
 
             int main(void)
             {
-                int k, day, num=10;
-                double l_temp, h_temp, sum_l=0.0, sum_h=0.0;
+                int k, day, max_day, min_day, num=0;
+                double l_temp, h_temp, sum_l=0.0, sum_h=0.0, max=0.0, min=999999.0;
                 FILE *myfile;
 
                 myfile=fopen("weather.txt", "r");
@@ -18,13 +22,28 @@
                     printf("Error in opening file\n\n");
                 else
                 {
-                    for (k=1; k<=num; k++)
+                    /* Instead of hardcoding num, gets end of file value */
+                    while (!feof(myfile))
                     {
-                        fscanf(myfile, "%i %lf %lf", &day, &l_temp, &h_temp);
+                        if(fscanf(myfile, "%i %lf %lf\n", &day, &l_temp, &h_temp) != 3) 
+                            break;
                         sum_l = sum_l + l_temp;
                         sum_h = sum_h + h_temp;
+                        if (max<h_temp)
+                        {
+                            max_day = day;
+                            max = h_temp;
+                        }
+                        if (min>l_temp)
+                        {
+                            min_day = day;
+                            min=l_temp;
+                        }
+                        num++;
                     }
 
+                    printf("The maximum temp: %.1f occured on day %i\n\n", max, max_day);
+                    printf("The mimimum temp: %.1f  occured on day %i\n\n", min, min_day);
                     printf("The average low temp was %.1f\n\n", sum_l/num);
                     printf("The average high temp was %.1f\n\n", sum_h/num);
                 }
@@ -63,4 +82,14 @@
 
                 */
 
+                /* OUTPUT with feature added
 
+                The maximum temp: 56.7 occured on day 5
+
+                The mimimum temp: 29.4  occured on day 3
+
+                The average low temp was 38.1
+
+                The average high temp was 45.2
+
+                */
