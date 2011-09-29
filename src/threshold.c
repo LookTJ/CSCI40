@@ -32,19 +32,40 @@ int main (void)
     if(sel_f == 1)
     {
         sentinel = fopen("sentinel.txt", "r");
-        fscanf(sentinel,"%i, %.2f, %.2f", &num, &x, &y);
-        do
+        if (sentinel == NULL)
+            printf("Error opening file\n\n");
+        else
         {
-        }while (k > 0);
-        printf("Percentage: %f%%\n", above/num * 100.0);
-        fclose(sentinel);
+            fscanf(sentinel,"%i", &num);
+            while (!feof(sentinel))
+            {
+                if (fscanf(sentinel,"%i",&num) != 3)
+                    break;
+                if(num != -999) 
+                    break;
+                if(th_x > above)
+                    above++;
+                num++;
+            }
+
+
+            printf("Percentage: %i%%\n", above/num * 100.0);
+            fclose(sentinel);
+        }
     }
     else if(sel_f == 2)
     {
         prenum = fopen("prenum.txt", "r");
-        fscanf(prenum,"%i", &num);
-        printf("Percentage: %f%%", above/num * 100.0);
-        fclose(prenum);
+        if(prenum == NULL)
+            printf("Error opening file");
+        else
+        {
+            fscanf(prenum,"%i", &num);
+            for (k=th_x; k<=num; k++)
+                above++;            
+            printf("Percentage: %i%%\n", above/num * 100.0);
+            fclose(prenum);
+        }
     }
 
 
