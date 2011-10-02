@@ -11,8 +11,8 @@ Purpose: read from external file and determine the
 int main (void)
 {
     float value;
-    double x, y;
-    int sel_f, k, th_x, above=0, num=0;
+    double x, y, above=0.0, num=0.0;
+    int sel_f, k, th_x;
     FILE *sentinel;
     FILE *prenum;
 
@@ -39,14 +39,15 @@ int main (void)
         {
             while(!feof(sentinel))
             {
-                if(fscanf(sentinel,"%f",&value) != 1) return 1;
+                if(fscanf(sentinel,"%f", &value) != 1) return 1;
                 if(value == -999.0) break;
-                if(value>th_x)
+                if(num>th_x)
                     above++;
                 num++;
             }
-            printf("num: %d\n", num);
-            printf("Percentage: %d%%\n", above/num * 100.0);
+            printf("above: %.0f\n", above);
+            printf("num: %.0f\n", num);
+            printf("Percentage: %f%%\n", above/num * 100.0);
             fclose(sentinel);
         }
     }
@@ -57,15 +58,15 @@ int main (void)
             printf("Error opening file\n\n");
         else
         {
-            fscanf(prenum, "%d",&num);
-            for(k=1; k<=num; k++)
+            fscanf(prenum, "%lf",&num);
+            for(k=0; k<num; k++)
             {
-                if(k==44.0) break;
                 if(k>th_x)
                     above++;   
             }
-            printf("num: %i\n", num);
-            printf("Percentage: %d%%\n", above/num * 100.0);
+            printf("above: %.0f\n", above);
+            printf("num: %.0f\n", num);
+            printf("Percentage: %f%%\n", (above/num) * 100.0);
             fclose(prenum);
         }
     }
