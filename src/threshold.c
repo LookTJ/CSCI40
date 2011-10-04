@@ -45,8 +45,7 @@ int main (void)
                     above++;
                 num++;
             }
-            printf("above: %.0f\n", above);
-            printf("num: %.0f\n", num);
+            printf("number of data values: %.0f\n", num);
             printf("Percentage: %f%%\n", above/num * 100.0);
             fclose(sentinel);
         }
@@ -64,9 +63,8 @@ int main (void)
                 if(k>th_x)
                     above++;   
             }
-            printf("above: %.0f\n", above);
-            printf("num: %.0f\n", num);
-            printf("Percentage: %f%%\n", (above/num) * 100.0);
+            printf("number of data values: %.0f\n", num);
+            printf("Percentage: %f%%\n", above/num * 100.0);
             fclose(prenum);
         }
     }
