@@ -38,7 +38,7 @@ int main (void)
     {
         while(!feof(flight))
         {
-            /* Test file for 2 values, if not 2, return error(nonzero) */
+            /* Test file for 2 values, if not 2, break */
             if(fscanf(flight, "%lf %lf", &times, &heights) != 2) break;
             /* print values from data file regarding time and height. */
             if(time_input == times)
