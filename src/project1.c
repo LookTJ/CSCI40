@@ -15,9 +15,15 @@ int main (void)
     double times=-99999.0, heights=-99999.0, time_input, t1=-99999.0, h1=-99999.0;
     FILE *flight;
 
-    /* asks user to input time. */
-    printf("Input a time: ");
-    scanf("%lf", &time_input);
+    do
+    {
+        /* asks user to input time. */
+        printf("Input a time of 0 or greater: ");
+        scanf("%lf", &time_input);
+        /* return error if input < 0 */
+        if(time_input < 0) {printf("Invalid input.\n");}
+    }while(time_input < 0);
+
 
     flight = fopen("flight.txt", "r");
     /* if there's nothing to read, print error.*/
@@ -28,13 +34,11 @@ int main (void)
         while(!feof(flight))
         {
             /* Test file for 2 values, if not 2, return error(nonzero) */
-            if(fscanf(flight, "%lf %lf", &times, &heights) != 2) return 1;
-            /* break out of while loop if input is < 0 */
-            if(time_input < 0) {printf("Invalid input.\n"); break;}
+            if(fscanf(flight, "%lf %lf", &times, &heights) != 2) break;
             /* print values from data file regarding time and height. */
             if(time_input == times)
             {
-                printf("the height corresponding to the time %.1lf is: %.1lf\n",
+                printf("\n\nThe height corresponding to the time %.1lf is: %.1lf\n",
                         time_input, heights);
             }
             /* print values if time isn't in data file, but in between previous
@@ -42,13 +46,15 @@ int main (void)
              * use linear interpolation formula */
             else if(t1<time_input && times>time_input) 
             {
-                printf("the height corresponding to the time %.1lf is: %.1lf\n",
+                printf("\n\nThe height corresponding to the time %.1lf is: %.1lf\n",
                         time_input, h1 + (heights - h1) / (times - t1) * (time_input - t1));
             }
             /* input current values to assign previous values */
             t1 = times;
             h1 = heights;
         }
+        if(time_input>times) 
+            printf("\n\nTime value does not exist in data file.\n");
         /* close flight.txt */
         fclose(flight);
     }
