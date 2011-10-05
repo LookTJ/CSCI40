@@ -11,7 +11,13 @@
 
 int main (void)
 {
-    /* intialize values at bogus values to make sure loop starts at 0.0 */
+    /* intialize values at bogus values to make sure loop starts at 0.0
+     * times - current time value
+     * heights - current height value
+     * time_input - user to input time
+     * t1 - current value assigned to this variable to assign previous value.
+     * h1 - same as t1
+     * file pointer for flight.txt data file */
     double times=-99999.0, heights=-99999.0, time_input, t1=-99999.0, h1=-99999.0;
     FILE *flight;
 
@@ -53,8 +59,9 @@ int main (void)
             t1 = times;
             h1 = heights;
         }
+        /* print error if time value is nonexisent in flight.txt */
         if(time_input>times) 
-            printf("\n\nTime value does not exist in data file.\n");
+            printf("\n\nTime value does not exist in flight.txt.\n");
         /* close flight.txt */
         fclose(flight);
     }
