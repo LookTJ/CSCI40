@@ -17,7 +17,7 @@ int main (void)
      * t1 - current value assigned to this variable to assign previous value.
      * h1 - same as t1
      * file pointer for flight.txt data file */
-    double times=-99999.0, heights=-99999.0, time_input, t1=-99999.0, h1=-99999.0;
+    double times=-99999.0, heights=-99999.0, time_input, t1, h1=-99999.0;
     FILE *flight;
 
     do
@@ -29,8 +29,11 @@ int main (void)
         if(time_input < 0) {printf("Invalid input.\n");}
     }while(time_input < 0);
 
+    /* to make sure the loop checks the input value in the while loop. */
+    t1 = time_input;
 
-    flight = fopen("/home/taylor/backup/SchoolWork/CSCI40/programs/flight.txt", "r");
+
+    flight = fopen("flight.txt", "r");
     /* if there's nothing to read, print error.*/
     if(flight == NULL)
         printf("Error opening file.\n");
@@ -40,6 +43,12 @@ int main (void)
         {
             /* Test file for 2 values, if not 2, break */
             if(fscanf(flight, "%lf %lf", &times, &heights) != 2) break;
+            /* test if input exist at start of file */
+            if(time_input<t1)
+            {
+                printf("\n\nTime value does not exist in flight.txt.\n");
+                break;
+            }
             /* print values from data file regarding time and height. */
             if(time_input == times)
             {
@@ -68,6 +77,7 @@ int main (void)
     }
 
     /* pause prompt in Windows so to copy/paste output. */
+    printf("\n");
     system("PAUSE");
     return 0;
 }
