@@ -33,14 +33,31 @@ int roll_pair()
 
 void play_craps()
 {
-    int k, previous;
+    int k, sum, previous;
     time_t seconds;
     seconds = time(NULL);
     srand(seconds);
 
-    for(k=1; k<=10; k++)
+    for(k=1; k<=10000; k++)
     {
-        printf("Roll number %i is %i \n", k, roll_pair());
+        sum = roll_pair();
+        printf("Roll number %i is %i \n", k, sum);
+        if(k==1 && (sum==7 || sum==11))
+        {
+            printf("You win!\n");
+            break;
+        }
+        else if(k==1 && (sum==2 || sum==3 || sum==7 || sum==11 || sum==12))
+        {
+            printf("You lose!\n");
+            break;
+        }
+        else if(k>1 && (sum==7 || sum==previous))
+        {
+            printf("You win!");
+            break;
+        }
+        previous = sum;
     }
 
     return;
