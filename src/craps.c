@@ -45,11 +45,6 @@ int roll_pair()
     die_2 = rand_int(1,6);
     total = die_1 + die_2;
     total1=total;
-    if(total==7 || total==11)
-    {
-        printf("%i\n", total);
-        printf("You win!\n");
-    }
     return total;
 }
 
@@ -59,15 +54,13 @@ void play_craps()
 {
     int k, previous;
     int roll_pair();
-    unsigned int seed;
-    printf("Enter a positive integer seed\n");
-    scanf("%u", &seed);
-    srand(seed);
+    time_t seconds;
+    seconds = time(NULL);
+    srand(seconds);
 
     for(k=1; k<=10; k++)
     {
-        printf("Roll number %i is \n", k);
-        roll_pair();
+        printf("Roll number %i is %i \n", k, roll_pair());
     }
 
     return;
