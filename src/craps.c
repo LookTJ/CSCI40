@@ -33,7 +33,7 @@ int roll_pair()
 
 void play_craps()
 {
-    int k, sum, previous;
+    int k, sum, sum1, first, previous;
     time_t seconds;
     seconds = time(NULL);
     srand(seconds);
@@ -47,16 +47,39 @@ void play_craps()
             printf("You win!\n");
             break;
         }
-        else if(k==1 && (sum==2 || sum==3 || sum==7 || sum==11 || sum==12))
+        else if(k==1 && (sum==2 || sum==3 || sum==12))
         {
             printf("You lose!\n");
             break;
         }
-        else if(k>1 && (sum==7 || sum==previous))
+        else if(k==1 && (sum!=2 || sum!=3 || sum!=7 || sum!=11 || sum!=12))
         {
-            printf("You win!");
+            printf("Keep rolling...\n");
+            first = sum;
+            previous = sum;
+            continue;
+        }
+        else if(k==2 && sum==7)
+        {
+            printf("You lose!");
             break;
         }
+        else if(k>1 && sum==first)
+        {
+            sum1 = first;
+            continue;
+        }
+        else if(k>1 && sum==7 && sum1==first)
+        {
+            printf("You win");
+            break;
+        }
+        else if(k>1 && sum==7)
+        {
+            printf("You lose.");
+            break;
+        }
+
         previous = sum;
     }
 
@@ -64,7 +87,7 @@ void play_craps()
 
 }
 
-/*----------------------------------------------------------------------------*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 int main(void)
 {
