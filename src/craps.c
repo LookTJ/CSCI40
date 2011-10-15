@@ -59,11 +59,6 @@ void play_craps()
             previous = sum;
             continue;
         }
-        else if(k==2 && sum==7)
-        {
-            printf("You lose!");
-            break;
-        }
         else if(k>1 && sum==first)
         {
             sum1 = first;
