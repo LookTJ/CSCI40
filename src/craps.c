@@ -52,7 +52,7 @@ void play_craps()
             printf("You lose!\n");
             break;
         }
-        else if(k==1 && (sum!=2 || sum!=3 || sum!=7 || sum!=11 || sum!=12))
+        else if(k==1)
         {
             printf("Keep rolling...\n");
             first = sum;
