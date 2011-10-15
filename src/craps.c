@@ -33,12 +33,12 @@ int roll_pair()
 
 void play_craps()
 {
-    int k, sum, sum1, first, previous;
+    int k=1, sum, sum1, first;
     time_t seconds;
     seconds = time(NULL);
     srand(seconds);
 
-    for(k=1; k<=10000; k++)
+    while(1)
     {
         sum = roll_pair();
         printf("Roll number %i is %i \n", k, sum);
@@ -56,12 +56,13 @@ void play_craps()
         {
             printf("Keep rolling...\n");
             first = sum;
-            previous = sum;
+            k++;
             continue;
         }
         else if(k>1 && sum==first)
         {
             sum1 = first;
+            k++;
             continue;
         }
         else if(k>1 && sum==7 && sum1==first)
@@ -75,7 +76,7 @@ void play_craps()
             break;
         }
 
-        previous = sum;
+        k++;
     }
 
     return;
