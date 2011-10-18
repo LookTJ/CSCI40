@@ -60,7 +60,7 @@ void play_craps()
         }
         else if(k>1 && sum==first)
         {
-            printf("Tou win.");
+            printf("You win.");
             break;
         }
         else if(k>1 && sum==7)
