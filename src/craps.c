@@ -20,12 +20,11 @@ int rand_int(int a, int b)
 
 int roll_pair()
 {
-    int die_1, die_2, total, total1;
+    int die_1, die_2, total;
 
     die_1 = rand_int(1,6);
     die_2 = rand_int(1,6);
     total = die_1 + die_2;
-    total1=total;
     return total;
 }
 
@@ -41,7 +40,7 @@ void play_craps()
     while(1)
     {
         sum = roll_pair();
-        printf("Roll number %i is %i \n", k, sum);
+        printf("Roll number %d is %d \n", k, sum);
         if(k==1 && (sum==7 || sum==11))
         {
             printf("You win!\n");
