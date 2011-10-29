@@ -30,12 +30,10 @@ int roll_pair()
 
 /*----------------------------------------------------------------------------*/
 
+int w=0, l=0;
 void play_craps()
 {
     int k=1, sum, sum1, first;
-    time_t seconds;
-    seconds = time(NULL);
-    srand(seconds);
 
     while(1)
     {
@@ -43,12 +41,14 @@ void play_craps()
         printf("Roll number %d is %d \n", k, sum);
         if(k==1 && (sum==7 || sum==11))
         {
-            printf("You win!\n");
+            printf("You win!\n\n\n");
+            w++;
             break;
         }
         else if(k==1 && (sum==2 || sum==3 || sum==12))
         {
-            printf("You lose!\n");
+            printf("You lose!\n\n\n");
+            l++;
             break;
         }
         else if(k==1)
@@ -57,15 +57,17 @@ void play_craps()
             first = sum;
             k++;
             continue;
-        }
+       }
         else if(k>1 && sum==first)
         {
-            printf("You win.\n");
+            printf("You win.\n\n\n");
+            w++;
             break;
         }
         else if(k>1 && sum==7)
         {
-            printf("You lose.\n");
+            printf("You lose.\n\n\n");
+            l++;
             break;
         }
 
@@ -80,7 +82,11 @@ void play_craps()
 
 int main(void)
 {
+    int k;
     char answer, junk;
+    time_t seconds;
+    seconds = time(NULL);
+    srand(seconds);
     do
     {
         printf("\n\n\n");
@@ -89,8 +95,15 @@ int main(void)
         answer = getchar();
         junk = getchar();
         if (answer == 'y' || answer == 'Y')
-            play_craps();
+        {
+            for(k=1; k<=10000; k++)
+            {
+                play_craps();
+            }
+        }
     }while (answer == 'y' || answer == 'Y');
+    printf("Wins: %d\n", w);
+    printf("Losses: %d\n", l);
     system("PAUSE");
     return (0);
 }
