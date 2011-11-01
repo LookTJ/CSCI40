@@ -8,12 +8,12 @@
 
 int main (void)
 {
-    int r[20], k;
+    int r[20], k, count=0;
     FILE *in;
     in = fopen("order.txt", "r");
 
     if(in == NULL)
-        printf("Error opening file\n");
+        printf("Error opening file: order.txt\n");
     else
     {
         // forward read order.
@@ -23,12 +23,15 @@ int main (void)
             printf("%d\n", r[k]);
             // stop loop at sentinel, being 9999.
             if(r[k] == 9999) break;
+            // increment count to use in reverse for loop initialization.
+            count++;
         }
 
+        // readability.
         printf("\n\n");
 
-        // reverse read order.
-        for(k=19; k>=0; k--)
+        // reverse for loop.
+        for(k=count; k>=0; k--)
             printf("%d\n", r[k]);
         fclose(in);
     }
