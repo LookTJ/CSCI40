@@ -38,7 +38,6 @@ int main(void)
 void moving_average(double x[], double y[], int n)
 {
     int k;
-    double sum, after, prev;
 
     for(k=0; k<=n-1; k++)
     {
@@ -52,11 +51,7 @@ void moving_average(double x[], double y[], int n)
             y[k] = x[k];
             break;
         }
-        sum = 0.0;
-        prev = x[k-1];
-        after = x[k+1];
-        sum = prev + x[k] + after;
-        y[k] = sum/3;
+        y[k] = (x[k-1] + x[k] + x[k+1])/3;
     }
     return;
 }
