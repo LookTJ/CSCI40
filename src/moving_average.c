@@ -39,20 +39,10 @@ void moving_average(double x[], double y[], int n)
 {
     int k;
 
-    for(k=0; k<=n-1; k++)
-    {
-        if(k==0)
-        {
-            y[k] = x[k];
-            continue;
-        }
-        if(k==n-1)
-        {
-            y[k] = x[k];
-            break;
-        }
+    y[0] = x[0];
+    y[n-1] = x[n-1];
+    for(k=1; k<n-1; k++)
         y[k] = (x[k-1] + x[k] + x[k+1])/3;
-    }
     return;
 }
 
