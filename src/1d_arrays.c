@@ -32,11 +32,16 @@ void bias(double x[], double y[], int n)
 
 int main (void)
 {
-    double x[N] = {10, 2, 36, 8, 3, 12, 15, 9, 1.4, 3.5, 
-                    5, 10.1, 0.5, 1.2, 6, 7.7, 44.3, 20.5, 2, 1.2}; 
+    double x[N];
     double y[N];
     int k, n;
     n = 20;
+
+    for(k=0; k<=n-1; k++)
+    {
+        printf("Enter a value for x[%d]\n", k);
+        scanf("%lf", &x[k]);
+    }
 
     bias(x,y,n);
 
