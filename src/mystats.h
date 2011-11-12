@@ -141,28 +141,31 @@ double range(double x[], int n)
 
 void mode(double x[], int n)
 {
-    int k, j, mode_x=0, count=0, N=0;
-    int y[] = {-9999}, t[] = {-99999};
+    int k, j, mode_x=0, count=1, N=0;
+    int y[100];
+    double t[100];
+    double hold;
 
     sort(x,n);
 
     for(k=0;k<=n-1; k++)
     {
-        if(count>0)
-            mode_x++;
-        count=0;
-        for(j=0; j<=n-1; j++)
+        for(j=k+1; j<=n-1; j++)
         {
             if(x[j]==x[k])
             {
                 count++;
                 t[k]=x[j];
-            
+           
+                hold = x[k];
                 y[k]=count;
-                if(t[k]==x[k])
-                    N++;
             }
         }
+        if(hold==t[k])
+            N++;
+        if(count>1)
+            mode_x++;
+        count = 1;
     }
 
     if(mode_x==0)
@@ -170,14 +173,14 @@ void mode(double x[], int n)
     if(mode_x==1)
     {
         printf("The data set has %d mode.\n", mode_x);
-        printf("The value %d appeared %d times in the data set\n", t[0], y[0]);
+        printf("The value %lf appeared %d times in the data set\n", t[0], y[0]);
     }
     if(mode_x>1)
     {
         printf("The data set has %d modes.\n", mode_x);
         for(k=0; k<=N; k++)
         {
-            printf("The value %d appeared %d times in the data set\n", t[k], y[k]);
+            printf("The value %lf appeared %d times in the data set\n", t[k], y[k]);
         }
     }
 
