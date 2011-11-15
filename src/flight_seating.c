@@ -11,7 +11,7 @@
 int main (void)
 {
     int row[38][6];
-    int k, n, j;
+    int k, n, pairs=0;
     FILE *flight_data;
     n = 38;
 
@@ -28,14 +28,28 @@ int main (void)
                 fscanf(flight_data, "%d %d %d %d %d %d\n", &row[k][0], &row[k][1], 
                         &row[k][2], &row[k][3], &row[k][4], &row[k][5]);
                 if(row[k][0]==0 && row[k][1]==0)
+                {
                     printf("    %4d      %4d,2\n", k+1, 1);
+                    pairs++;
+                }
                 if(row[k][1]==0 && row[k][2]==0)
+                {
                     printf("    %4d      %4d,3\n", k+1, 2);
+                    pairs++;
+                }
                 if(row[k][3]==0 && row[k][4]==0)
+                {
                     printf("    %4d      %4d,5\n", k+1, 4);
+                    pairs++;
+                }
                 if(row[k][4]==0 && row[k][5]==0)
+                {
                     printf("    %4d      %4d,6\n", k+1, 5);
+                    pairs++;
+                }
             }
+        if(pairs==0)
+            printf("\n\n    There are no seat pairs available.\n");
 
         fclose(flight_data);
     }
