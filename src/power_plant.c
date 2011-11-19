@@ -8,7 +8,6 @@ int main (void)
             {0, 2.7, 4.2, 9.1, 18.0, 30.0, 41.5}, {0, 4.0, 12.9, 27.3, 52.6, 94.4, 131.8},
             {0, 3.3, 10.0, 22.7, 44.7, 80.9, 111.2}, {0, 1.8, 4.1, 8.5, 15.3, 27.2, 46.4}};
     double flowrate[6] = {0};
-    double flowrate_rnd[6] = {0};
     double sum=0.0;
     int i, j;
 
@@ -21,12 +20,11 @@ int main (void)
             if(flowrate[i]<0.5 || flowrate[i]>=6.5)
                 printf("The value must be equal to 0.5 or between 0.5 and 6.5\n ");
         }
-        flowrate_rnd[i] = floor(flowrate[i] + 0.5);
     }
     
     for(i=1; i<=5; i++)
     {
-        j=flowrate_rnd[i];
+        j=floor(flowrate[i] + 0.5);
         printf("The power required for loop %d is %.1lf hp\n", i, power[i][j]);
         sum += power[i][j];
     }
