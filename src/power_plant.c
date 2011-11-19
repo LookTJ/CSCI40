@@ -30,7 +30,7 @@ int main (void)
             printf("The power required for loop %d is %.1lf hp\n", i, power[i][j]);
             sum += power[i][j];
         }
-    printf("The total power required for all loops is %.1lf\n", sum);
+    printf("The total power required for all loops is %.1lf hp\n", sum);
 
 
     system("PAUSE");
