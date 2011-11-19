@@ -25,11 +25,11 @@ int main (void)
     }
     
     for(i=1; i<=5; i++)
-        {
-            j=flowrate_rnd[i];
-            printf("The power required for loop %d is %.1lf hp\n", i, power[i][j]);
-            sum += power[i][j];
-        }
+    {
+        j=flowrate_rnd[i];
+        printf("The power required for loop %d is %.1lf hp\n", i, power[i][j]);
+        sum += power[i][j];
+    }
     printf("The total power required for all loops is %.1lf hp\n", sum);
 
 
