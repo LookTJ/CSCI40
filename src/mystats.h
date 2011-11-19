@@ -141,7 +141,7 @@ double range(double x[], int n)
 
 void mode(double x[], int n)
 {
-    int k, j, mode_x=0, count=0, ccount=0, N=0;
+    int k, j, mode_x=0, count=0, ccount=1, N=0;
     int y[100];
     double t[100];
     double hold;
@@ -160,7 +160,7 @@ void mode(double x[], int n)
                 hold = x[k];
                 y[k]=count;
             }
-            ccount = count;
+            ccount = count-1;
         }
         if(x[k]==hold)
             N++;
