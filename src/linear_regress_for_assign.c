@@ -1,3 +1,8 @@
+// Submitter: Taylor Lookabaugh
+// Program: #22 - Linear Regression
+//          using pointers
+// file: linear_regress_for_assign.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #define N 100
