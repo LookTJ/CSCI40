@@ -81,3 +81,31 @@ double sum_square_array(double x[], int n)
    return total;
 }
 
+/*OUTPUT
+  Enter the number of (x,y) pairs in your data set: 5
+
+  Enter x and y values for pair number 1
+  (put a space and NOT a comma between the x and y values)
+  1.0 1.2
+
+  Enter x and y values for pair number 2
+  (put a space and NOT a comma between the x and y values)
+  2.1 2.5
+
+  Enter x and y values for pair number 3
+  (put a space and NOT a comma between the x and y values)
+  2.9 2.8
+
+  Enter x and y values for pair number 4
+  (put a space and NOT a comma between the x and y values)
+  4.2 4.8 
+
+  Enter x and y values for pair number 5
+  (put a space and NOT a comma between the x and y values)
+  5.2 5.1
+
+  The best line fit through your data is: y = 0.97x + 0.29
+
+  sh: PAUSE: command not found
+*/
+
