@@ -159,9 +159,20 @@ void mode(double x[], int n)
 {
     int k, j, mode_x=0, count=0;
     int y[100];
-    double max_y;
+    int max_y;
+
+    // Glossary:
+    // k - used in outer for loop and standard for loop.
+    // j - used in inner for loop to see if x[k] = x[j]
+    // mode_x - counts how many modes there are in a data set.
+    // count - counter for how many times the value appeared throughout the
+    // scan of the x array.
+    // max_y - to get max value of the counter.
+    // y[100] - counter array.
 
 
+    // go through the data set to count the number of times each values
+    // appeared.
     for(k=0;k<=n-1; k++)
     {
         for(j=k;  j<=n-1; j++)
@@ -173,18 +184,22 @@ void mode(double x[], int n)
             }
         }
 
-        y[k]=count;
+        y[k]=count; // put the count in the counting y array.
 
-        count = 0;
+        count = 0; // reset the count
     }
+    // get the max count in the data set
     max_y = max_int(y,n);
 
+    // increment mode_x if the max equals the counter.
     for(k=0; k<=n-1; k++)
         if(max_y == y[k])
             if(y[k]>1)
                 mode_x++;
 
 
+    // print out the mode(s), and the corresponding value counted in the data
+    // set.
     if(mode_x==0)
         printf("The data set has no mode.\n");
     if(mode_x>=1)
