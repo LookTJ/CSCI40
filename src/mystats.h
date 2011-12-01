@@ -165,7 +165,7 @@ void mode(double x[], int n)
 
     for(k=0;k<=n-1; k++)
     {
-        for(j=k+1;  j<=n-1; j++)
+        for(j=k;  j<=n-1; j++)
         {
             if(x[j]==x[k])
             {
@@ -181,7 +181,7 @@ void mode(double x[], int n)
     max_x = max_int(y,n);
 
     for(k=0; k<=n-1; k++)
-        if(max_x = y[k])
+        if(max_x == y[k])
             if(y[k]>1)
                 mode_x++;
 
@@ -193,8 +193,7 @@ void mode(double x[], int n)
         printf("The data set has %d mode.\n", mode_x);
         for(k=0; k<=n-1; k++)
         {
-            if(max_x = y[k])
-                if(y[k]>1)
+            if(max_x == y[k])
                     printf("The value %lf appeared %d times in the data set\n", x[k], y[k]);
         }
     }
@@ -203,9 +202,8 @@ void mode(double x[], int n)
         printf("The data set has %d modes.\n", mode_x);
         for(k=0; k<=n-1; k++)
         {
-            if(max_x = y[k])
-                if(y[k]>1)
-            printf("The value %lf appeared %d times in the data set\n", x[k], y[k]);
+            if(max_x == y[k])
+                printf("The value %lf appeared %d times in the data set\n", x[k], y[k]);
         }
     }
 
