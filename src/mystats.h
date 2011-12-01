@@ -6,6 +6,7 @@
 
 int fill_and_count_array(double x[]);
 double max(double x[], int n);
+int max_int(int x[], int n);
 double min(double x[], int n);
 double mean(double x[], int n);
 double variance(double x[], int n);
@@ -42,6 +43,21 @@ double max(double x[], int n)
 
     max_x = x[0];
     
+    for(k=1; k<=n-1; k++)
+        if(x[k] > max_x)
+            max_x = x[k];
+    return max_x;
+}
+
+/*----------------------------------------------------------------------------*/
+
+int max_int(int x[], int n)
+{
+    int k;
+    int max_x;
+
+    max_x = x[0];
+
     for(k=1; k<=n-1; k++)
         if(x[k] > max_x)
             max_x = x[k];
@@ -147,16 +163,9 @@ void mode(double x[], int n)
     double min_x, max_x, max_y;
 
 
-    sort(x,n);
     for(k=0;k<=n-1; k++)
     {
-        if(hold==x[k]) 
-        {
-            y[k] = 0;
-            count = 0;
-            continue;
-        }
-        for(j=k; j<=n-1; j++)
+        for(j=k+1;  j<=n-1; j++)
         {
             if(x[j]==x[k])
             {
@@ -167,31 +176,39 @@ void mode(double x[], int n)
 
         y[k]=count;
 
-        if(y[k]>1)
-            hold = x[k];
-            mode_x++;
         count = 0;
     }
-    max_x = max(x,n);
-    min_x = min(x,n);
+    max_x = max_int(y,n);
+
+    for(k=0; k<=n-1; k++)
+        if(max_x = y[k])
+            if(y[k]>1)
+                mode_x++;
+
 
     if(mode_x==0)
         printf("The data set has no mode.\n");
     if(mode_x==1)
     {
         printf("The data set has %d mode.\n", mode_x);
-        printf("The value %lf appeared %d times in the data set\n", x[0], y[0]);
+        for(k=0; k<=n-1; k++)
+        {
+            if(max_x = y[k])
+                if(y[k]>1)
+                    printf("The value %lf appeared %d times in the data set\n", x[k], y[k]);
+        }
     }
     if(mode_x>1)
     {
         printf("The data set has %d modes.\n", mode_x);
+        for(k=0; k<=n-1; k++)
+        {
+            if(max_x = y[k])
+                if(y[k]>1)
+            printf("The value %lf appeared %d times in the data set\n", x[k], y[k]);
+        }
     }
 
-    for(k=0; k<=n-1; k++)
-    {
-        if(y[k]>1)
-            printf("The value %lf appeared %d times in the data set\n", x[k], y[k]);
-    }
 
     return;
 }
