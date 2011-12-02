@@ -1,3 +1,8 @@
+// Submitter: Taylor Lookabaugh
+// Project #2 - mode function using Mr. Glaves' main program with small
+// modification
+// included the string header file
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,7 +14,7 @@ int main (void)
         int n;
         FILE *file1, *file2, *file3;
 
-        file1=fopen("input1.txt", "r");
+        file1=fopen("e:\\input1.txt", "r");
         n=0;
         fscanf(file1,"%lf",&x[n]);
         while (x[n]!=-9999)
@@ -20,7 +25,7 @@ int main (void)
         fclose(file1);
         mode(x,n);
 
-        file2=fopen("input2.txt", "r");
+        file2=fopen("e:\\input2.txt", "r");
         n=0;
         fscanf(file2,"%lf",&x[n]);
         while (x[n]!=-9999)
@@ -32,7 +37,7 @@ int main (void)
         mode(x,n);
 
         
-        file3=fopen("input3.txt", "r");
+        file3=fopen("e:\\input3.txt", "r");
         n=0;
         fscanf(file3,"%lf",&x[n]);
         while (x[n]!=-9999)
